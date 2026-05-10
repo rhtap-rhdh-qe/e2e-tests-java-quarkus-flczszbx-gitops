@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: e2e-tests-java-quarkus-flczszbx
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: e2e-tests-java-quarkus-flczszbx 
+  name: e2e-tests-java-quarkus-flczszbx
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: e2e-tests-java-quarkus-flczszbx
+    weight: 100 
